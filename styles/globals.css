@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #ec5a31;
+  --secondary-color: #000066;
+}
+
+.btn {
+  background-color: #ec5a31;
+}
+
+li:hover {
+  color: #ec5a31;
+}
+.menu-bg {
+  background-color: #f99a1a;
+}
+@layer components {
+  .container {
+    @apply w-[1440px] px-5 mx-auto;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .container {
+    @apply w-full;
+  }
+}
+
+footer {
+  display: flex;
+  margin-top: auto;
+}
+.growandscale {
+  text-decoration: underline;
+  -webkit-text-decoration-color: #ec5a31; /* Safari */
+  text-decoration-color: #ec5a31;
+}
+
+.outline {
+  outline-style: solid;
+  outline-color: #ec5a31;
+  outline-width: 1px;
+}
+.footer-logo {
+  width: 123px;
+}
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: #000000;
+  padding: 5px;
+  text-decoration: none;
+}
+.dropdown-content a:hover {
+  color: #ffffff;
+  background-color: #00a4bd;
+}
+
+.pic-background::before {
+  position: absolute;
+  inset: 0;
+  z-index: -5;
+  content: "";
+  background-image: url("../public/assets/world.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(110%);
+}
+
+#navbar {
+  transition: all 0.3s;
+}
+
+.navbar-hidden {
+  top: -300px;
+  opacity: 0;
+}

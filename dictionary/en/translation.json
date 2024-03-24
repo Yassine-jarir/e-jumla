@@ -1,0 +1,85 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "Who we are?",
+    "services": "Services",
+    "howWeWork": "How we work?",
+    "buttons": {
+      "startNow": "Start now"
+    }
+  },
+
+  "hero": {
+    "bigTitle": "We seek to provide you with the services necessary to advance your business and develop your projects in the world of e-commerce",
+    "secondTitle": "Our expertise covers every aspect of your electronic business"
+  },
+
+  "services": {
+    "buttons": {
+      "startYourStep": "Take your first step"
+    }
+  },
+
+  "infos": {
+    "clients": "A client we deal with",
+    "import": "Imported container",
+    "factory_visited": "Factory visited"
+  },
+
+  "howWeWork": {
+    "title": "how do we work ?"
+  },
+
+  "flags": {
+    "title": "Where are we located?",
+    "description": "Our international transportation network allows fast and efficient delivery of goods from China to Morocco and to the countries of the Middle East. We are proud of our strategic presence in several countries around the world, giving our customers and partners an exceptional opportunity to expand and distribute their products effectively. Our network of sites extends across several countries, from Morocco in North Africa to China in East Asia, and includes Kuwait, Qatar, and the United Arab Emirates in the Arabian Gulf, in addition to the Kingdom of Saudi Arabia. These sites are located in strategic locations to meet the needs of our customers efficiently and quickly, at competitive prices and high quality. We strive to provide the best services in these diverse and evolving markets to ensure our clients succeed in achieving their business goals."
+  },
+
+  "partners": {
+    "title": "Our partners"
+  },
+
+  "about": {
+    "title": "Get to know us better",
+    "description": "We work to facilitate entry and prosperity in the field of e-commerce for individuals and companies in the Middle East, China and beyond. E-JUMLA is a Moroccan company specialized in providing a full range of basic services and solutions for companies operating in the field of e-commerce. Our company is distinguished by its commitment to excellence in its field, its ability to manage complex operations and its dedication to customer satisfaction. E-JUMLA MAROC works to provide a variety of services and solutions that include import, wrapping, packaging, storage, canning, wholesale, packaging and shipping. With its dedication to meeting customer needs and providing high-quality solutions, E-JUMLA seeks to enhance the success of e-commerce businesses and help them achieve their online goals."
+  },
+
+  "ready": {
+    "title": "Are you ready ?",
+    "description": "You can contact us for more information",
+    "buttons": {
+      "startNow": "Start now"
+    }
+  },
+
+  "footer": {
+    "description": "Start, grow, develop with ",
+    "jumlaMaroc": "Jumla Maroc",
+    "contactUs": "Contact us",
+    "ourServices": "Our services",
+    "list": "The list"
+  },
+
+  "joinForm": {
+    "fullName": "Full name",
+    "email": "Email",
+    "phoneNumber": "Phone number",
+    "service": "Service",
+    "chooseService": "Choose service",
+    "comment": "Comment",
+    "buttons": {
+      "send": "Submit",
+      "close": "Close"
+    }
+  },
+
+  "alertMessage": {
+    "success": "Sent succesfully !",
+    "failed": "Internal Server Error",
+    "inputsRequired": "All fields are required"
+  },
+  "blog": {
+    "published_at": "Published at",
+    "service": "Service"
+  }
+}

@@ -1,0 +1,53 @@
+name: Next CI
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Code Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    - name: Install npm dependencies
+      run: npm install
+
+    - name: Set env variables
+      run: |
+        touch .env
+        
+        echo 'NEXT_PUBLIC_SANITY_PROJECT_ID = "${{ secrets.SANITY_PROJECT_ID }}"' >> .env
+        echo 'NEXT_PUBLIC_SANITY_DATASET = "${{ secrets.SANITY_DATASET }}"' >> .env
+        echo 'NEXT_PUBLIC_SANITY_API_VERSION = "${{ secrets.SANITY_API_VERSION }}"' >> .env
+
+        echo 'NEXT_PUBLIC_GOOGLE_ANALYTICS = "${{ secrets.GOOGLE_ANALYTICS }}"' >> .env
+        echo 'NEXT_PUBLIC_GOOGLE_TAG_MANAGER = "${{ secrets.GOOGLE_TAG_MANAGER }}"' >> .env
+
+    - name: Run build task
+      run: npm run build --if-present
+
+    - name: Deploy to Production
+      uses: easingthemes/ssh-deploy@main
+      with:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        ARGS: "-rlgoDzvc -i"
+        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+        REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        TARGET: ${{ secrets.REMOTE_TARGET }}
+        SCRIPT_AFTER: |
+          cd ${{ secrets.REMOTE_TARGET }}
+          npm install
+          pm2 delete ecosystem.config.js --silent
+          sed -i 's/"start": "next start --port 3002"/"start": "next start -H 0.0.0.0 --port ${{ secrets.PROJECT_PORT }}"/g' package.json
+          pm2 start ecosystem.config.js --silent
+          pm2 save
+          pm2 startup
